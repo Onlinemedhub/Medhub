@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>घर का स्वाद किचन | Ghar Ka Swad Kitchen</title>
+    <!-- Self-contained, zero-dependency CSS for instant & reliable rendering -->
+    <style>
+        :root {
+            --primary: #ea580c;
+            --primary-dark: #c2410c;
+            --primary-light: #fff7ed;
+            --maroon: #431407;
+            --bg-cream: #fffbf5;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #fed7aa;
+            --veg-green: #16a34a;
+            --nonveg-red: #dc2626;
+            --whatsapp: #25d366;
+            --whatsapp-dark: #1ebe5d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-cream);
+            background-image: radial-gradient(#fed7aa 0.8px, transparent 0.8px);
+            background-size: 20px 20px;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 110px;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: linear-gradient(135deg, var(--maroon) 0%, #9a3412 50%, var(--primary) 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(67, 20, 7, 0.25);
+        }
+
+        .header-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-fresh {
+            background: #fde047;
+            color: var(--maroon);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 99px;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 0.76rem;
+            color: #ffedd5;
+            opacity: 0.95;
+        }
+
+        .qr-btn {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border: none;
+            padding: 9px 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.15s ease, background 0.15s ease;
+            flex-shrink: 0;
+        }
+
+        .qr-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ==================== STATUS STRIP ==================== */
+        .status-strip {
+            background: #ffedd5;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: var(--maroon);
+        }
+
+        .status-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 8px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .live-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: var(--veg-green);
+            border-radius: 50%;
+            margin-right: 6px;
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+        }
+
+        /* ==================== MAIN CONTAINER ==================== */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 18px 16px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .pill-tag {
+            display: inline-block;
+            background: #ffedd5;
+            color: var(--primary-dark);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 99px;
+            margin-bottom: 4px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--maroon);
+        }
+
+        /* ==================== FILTER TABS ==================== */
+        .filter-row {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .filter-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            padding: 8px 15px;
+            border-radius: 99px;
+            border: 1.5px solid #e2e8f0;
+            background: #ffffff;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, #dc2626 100%);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(234, 88, 12, 0.28);
+        }
+
+        /* ==================== MENU GRID & CARDS ==================== */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 600px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border: 1.5px solid #fde68a;
+            border-radius: 18px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(67, 20, 7, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .menu-card.selected {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
+            box-shadow: 0 6px 18px rgba(234, 88, 12, 0.16);
+        }
+
+        .menu-card.hidden-item {
+            display: none;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .dish-title-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .diet-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .diet-veg {
+            border: 1.5px solid var(--veg-green);
+            background: #f0fdf4;
+        }
+        .diet-veg::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--veg-green);
+        }
+        .diet-nonveg {
+            border: 1.5px solid var(--nonveg-red);
+            background: #fef2f2;
+        }
+        .diet-nonveg::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--nonveg-red);
+        }
+
+        .dish-name-hi {
+            font-size: 1.08rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .dish-name-en {
+            display: inline-block;
+            margin-top: 3px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: var(--primary-light);
+            border: 1px solid #fed7aa;
+            padding: 1px 8px;
+            border-radius: 6px;
+        }
+
+        .dish-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .dish-emoji {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 1px solid #fed7aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .card-bottom {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price-badge {
+            background: #fef3c7;
+            border: 1.5px solid #fcd34d;
+            padding: 4px 11px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 3px;
+        }
+
+        .price-num {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: #b91c1c;
+        }
+
+        .price-unit {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #78350f;
+        }
+
+        /* Quantity Controls [- 0 +] */
+        .qty-box {
+            display: inline-flex;
+            align-items: center;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 3px;
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 9px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease;
+        }
+
+        .qty-btn:active {
+            transform: scale(0.9);
+        }
+
+        .qty-minus {
+            background: #ffffff;
+            color: #334155;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        .qty-plus {
+            background: linear-gradient(135deg, var(--primary), #dc2626);
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(234, 88, 12, 0.3);
+        }
+
+        .qty-val {
+            width: 34px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.92rem;
+            color: #1e293b;
+        }
+
+        .qty-val.active {
+            color: var(--primary-dark);
+        }
+
+        /* ==================== CUSTOM ORDER BOX ==================== */
+        .custom-box {
+            background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%);
+            border: 2px dashed var(--primary);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.06);
+        }
+
+        .custom-header {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .custom-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #dc2626);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .quick-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .tag-chip {
+            background: #ffffff;
+            border: 1px solid #fdba74;
+            color: #9a3412;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .tag-chip:hover {
+            background: #ffedd5;
+        }
+
+        .form-textarea, .form-input {
+            width: 100%;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 11px 13px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #0f172a;
+            background: #ffffff;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-textarea:focus, .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+        }
+
+        /* ==================== CHECKOUT FORM ==================== */
+        .checkout-card {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 4px 14px rgba(67, 20, 7, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 13px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        .receipt-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 14px;
+            padding: 13px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .receipt-box.visible {
+            display: block;
+        }
+
+        .receipt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--maroon);
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #fdba74;
+            margin-bottom: 8px;
+        }
+
+        .clear-btn {
+            background: none;
+            border: none;
+            color: #dc2626;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .receipt-list {
+            list-style: none;
+            font-size: 0.83rem;
+        }
+
+        .receipt-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+        }
+
+        .receipt-total-row {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1.5px solid #fdba74;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--maroon);
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            background: var(--whatsapp);
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--whatsapp-dark);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* ==================== STICKY BOTTOM CART BAR ==================== */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 45;
+            background: #1e293b;
+            color: #ffffff;
+            border-top: 1px solid #334155;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.28s ease;
+        }
+
+        .sticky-bar.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 11px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .cart-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .cart-icon-box {
+            position: relative;
+            background: var(--primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .cart-count-pill {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ffffff;
+            color: var(--primary-dark);
+            font-size: 0.72rem;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .sticky-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-scroll-form {
+            background: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 11px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .btn-sticky-wa {
+            background: var(--whatsapp);
+            color: #ffffff;
+            border: none;
+            padding: 9px 14px;
+            border-radius: 11px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        /* ==================== TOAST & QR MODAL ==================== */
+        .toast {
+            position: fixed;
+            top: 76px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 60;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 11px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            display: none;
+            align-items: center;
+            gap: 8px;
+            max-width: 92%;
+        }
+
+        .toast.show {
+            display: flex;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 70;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(3px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 24px;
+            max-width: 360px;
+            width: 100%;
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #f1f5f9;
+            color: #475569;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .qr-frame {
+            border: 2.5px solid var(--primary);
+            border-radius: 18px;
+            padding: 14px;
+            display: inline-block;
+            margin: 14px 0;
+            background: #ffffff;
+        }
+
+        .modal-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #1e293b;
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-primary-sm {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        @media print {
+            body * { visibility: hidden; }
+            #qr-modal, #qr-modal * { visibility: visible; }
+            #qr-modal { position: absolute; inset: 0; background: #fff; }
+            .modal-close, .modal-actions { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="brand-box">
+                <div class="brand-logo">🍛</div>
+                <div>
+                    <div class="brand-title">
+                        <span>घर का स्वाद किचन</span>
+                        <span class="badge-fresh">Fresh</span>
+                    </div>
+                    <div class="brand-subtitle">Ghar Ka Swad Kitchen • शुद्ध और ताज़ा भोजन</div>
+                </div>
+            </div>
+            <button type="button" class="qr-btn" onclick="openQRModal()">
+                <span>📱 QR कोड</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== STATUS STRIP ==================== -->
+    <div class="status-strip">
+        <div class="status-inner">
+            <div><span class="live-dot"></span>ऑनलाइन ऑर्डर चालू है (Open Now)</div>
+            <div>🛵 किफायती रेट • गरमा-गरम डिलीवरी</div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="container">
+        <div class="section-header">
+            <div>
+                <span class="pill-tag">स्पेशल रेट लिस्ट</span>
+                <h1 class="section-title">आज का मेन्यू (Today's Menu)</h1>
+            </div>
+            <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">ऑर्डर के लिए + दबाएं</span>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-row">
+            <button type="button" class="filter-btn active" id="tab-all" onclick="filterMenu('all', this)">🍽️ सभी (All - 10)</button>
+            <button type="button" class="filter-btn" id="tab-veg" onclick="filterMenu('veg', this)">🟢 शाकाहारी (Veg - 7)</button>
+            <button type="button" class="filter-btn" id="tab-nonveg" onclick="filterMenu('nonveg', this)">🔴 अंडा / चिकन (Non-Veg - 3)</button>
+        </div>
+
+        <!-- ==================== STATIC + INTERACTIVE MENU LIST (ALWAYS VISIBLE) ==================== -->
+        <div class="menu-grid" id="menu-list">
+
+            <!-- 1. अंडा भुर्जी - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-anda_bhurji" data-type="nonveg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-nonveg" title="Egg / Non-Veg"></span>
+                            <h2 class="dish-name-hi">अंडा भुर्जी</h2>
+                        </div>
+                        <span class="dish-name-en">Anda Bhurji</span>
+                        <p class="dish-desc">मसालेदार प्याज, टमाटर और हरी मिर्च के साथ गरमा-गरम अंडा भुर्जी</p>
+                    </div>
+                    <div class="dish-emoji">🍳</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('anda_bhurji', -1)">−</button>
+                        <span class="qty-val" id="qty-anda_bhurji">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('anda_bhurji', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. रोटी - ₹7 / पीस -->
+            <div class="menu-card" id="card-roti" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">रोटी</h2>
+                        </div>
+                        <span class="dish-name-en">Tawa Roti</span>
+                        <p class="dish-desc">शुद्ध गेहूँ के आटे की नरम और ताज़ी सेंकी हुई तवा रोटी</p>
+                    </div>
+                    <div class="dish-emoji">🫓</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹7</span>
+                        <span class="price-unit">/ पीस</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('roti', -1)">−</button>
+                        <span class="qty-val" id="qty-roti">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('roti', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. चावल - ₹50 / प्लेट -->
+            <div class="menu-card" id="card-chawal" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">चावल</h2>
+                        </div>
+                        <span class="dish-name-en">Chawal / Steamed Rice</span>
+                        <p class="dish-desc">खिले-खिले और ताज़ा पके हुए सादा चावल</p>
+                    </div>
+                    <div class="dish-emoji">🍚</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹50</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('chawal', -1)">−</button>
+                        <span class="qty-val" id="qty-chawal">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('chawal', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. दाल - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-dal" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">दाल</h2>
+                        </div>
+                        <span class="dish-name-en">Dal Tadka / Fry</span>
+                        <p class="dish-desc">जीरे और मसालों के तड़के वाली स्वादिष्ट घर जैसी दाल</p>
+                    </div>
+                    <div class="dish-emoji">🥣</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('dal', -1)">−</button>
+                        <span class="qty-val" id="qty-dal">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('dal', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. छोले - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-chole" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">छोले</h2>
+                        </div>
+                        <span class="dish-name-en">Masala Chole</span>
+                        <p class="dish-desc">खास घर के मसालों में बने चटपटे और गाढ़े छोले</p>
+                    </div>
+                    <div class="dish-emoji">🥘</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('chole', -1)">−</button>
+                        <span class="qty-val" id="qty-chole">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('chole', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. राजमा - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-rajma" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">राजमा</h2>
+                        </div>
+                        <span class="dish-name-en">Punjabi Rajma</span>
+                        <p class="dish-desc">मसालेदार गाढ़ी ग्रेवी वाले स्वादिष्ट राजमा</p>
+                    </div>
+                    <div class="dish-emoji">🍛</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('rajma', -1)">−</button>
+                        <span class="qty-val" id="qty-rajma">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('rajma', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. चिकन - ₹90 / प्लेट -->
+            <div class="menu-card" id="card-chicken" data-type="nonveg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-nonveg" title="Non-Veg"></span>
+                            <h2 class="dish-name-hi">चिकन</h2>
+                        </div>
+                        <span class="dish-name-en">Homestyle Chicken Curry</span>
+                        <p class="dish-desc">घर के पिसे मसालों में बना लाजवाब तरी वाला चिकन</p>
+                    </div>
+                    <div class="dish-emoji">🍗</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹90</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('chicken', -1)">−</button>
+                        <span class="qty-val" id="qty-chicken">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('chicken', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. अण्डे आलू - ₹80 / प्लेट -->
+            <div class="menu-card" id="card-ande_aloo" data-type="nonveg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-nonveg" title="Egg / Non-Veg"></span>
+                            <h2 class="dish-name-hi">अण्डे आलू</h2>
+                        </div>
+                        <span class="dish-name-en">Ande Aloo Curry</span>
+                        <p class="dish-desc">उबले अंडे और आलू की मसालेदार स्वादिष्ट तरी वाली सब्जी</p>
+                    </div>
+                    <div class="dish-emoji">🥚</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹80</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('ande_aloo', -1)">−</button>
+                        <span class="qty-val" id="qty-ande_aloo">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('ande_aloo', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. कढ़ी - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-kadhi" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">कढ़ी</h2>
+                        </div>
+                        <span class="dish-name-en">Pakoda Kadhi</span>
+                        <p class="dish-desc">नरम पकौड़े वाली स्वादिष्ट और चटपटी घर की कढ़ी</p>
+                    </div>
+                    <div class="dish-emoji">🍲</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('kadhi', -1)">−</button>
+                        <span class="qty-val" id="qty-kadhi">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('kadhi', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. मिक्स दाल - ₹60 / प्लेट -->
+            <div class="menu-card" id="card-mix_dal" data-type="veg">
+                <div class="card-top">
+                    <div>
+                        <div class="dish-title-row">
+                            <span class="diet-icon diet-veg" title="Pure Veg"></span>
+                            <h2 class="dish-name-hi">मिक्स दाल</h2>
+                        </div>
+                        <span class="dish-name-en">Mix Dal Fry</span>
+                        <p class="dish-desc">पौष्टिक पंचमेल मिक्स दाल का हल्का और स्वादिष्ट तड़का</p>
+                    </div>
+                    <div class="dish-emoji">🥗</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="price-badge">
+                        <span class="price-num">₹60</span>
+                        <span class="price-unit">/ प्लेट</span>
+                    </div>
+                    <div class="qty-box">
+                        <button type="button" class="qty-btn qty-minus" onclick="changeQty('mix_dal', -1)">−</button>
+                        <span class="qty-val" id="qty-mix_dal">0</span>
+                        <button type="button" class="qty-btn qty-plus" onclick="changeQty('mix_dal', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== OTHER / CUSTOM ORDER SECTION ==================== -->
+        <section class="custom-box">
+            <div class="custom-header">
+                <div class="custom-icon">✍️</div>
+                <div>
+                    <h2 style="font-size: 1.05rem; font-weight: 800; color: #1e293b;">
+                        अन्य / अपनी पसंद का खाना लिखें <span style="color: #ea580c; font-size: 0.82rem;">(Other / Custom Order)</span>
+                    </h2>
+                    <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">
+                        मेन्यू के अलावा कुछ और मंगवाना हो या कोई खास निर्देश देना हो तो नीचे लिखें:
+                    </p>
+                </div>
+            </div>
+
+            <div class="quick-tags">
+                <button type="button" class="tag-chip" onclick="addQuickTag('कम तीखा रखें')">+ कम तीखा</button>
+                <button type="button" class="tag-chip" onclick="addQuickTag('एक्स्ट्रा प्याज और हरी मिर्च')">+ एक्स्ट्रा प्याज-मिर्च</button>
+                <button type="button" class="tag-chip" onclick="addQuickTag('रोटी पर घी लगाकर')">+ घी वाली रोटी</button>
+                <button type="button" class="tag-chip" onclick="addQuickTag('सलाद और अचार साथ भेजें')">+ सलाद व अचार</button>
+            </div>
+
+            <textarea id="custom-note" class="form-textarea" rows="3" oninput="updateSummary()" placeholder="उदाहरण: 2 आलू पराठा दही के साथ, या दाल में कम मिर्च रखें..."></textarea>
+        </section>
+
+        <!-- ==================== CUSTOMER DETAILS & WHATSAPP ORDER ==================== -->
+        <section class="checkout-card" id="checkout-section">
+            <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--maroon); margin-bottom: 14px;">
+                📍 डिलीवरी विवरण (Delivery Details)
+            </h2>
+
+            <div class="form-group">
+                <label class="form-label" for="cust-name">आपका नाम (Your Name) *</label>
+                <input type="text" id="cust-name" class="form-input" placeholder="अपना पूरा नाम लिखें">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="cust-phone">मोबाइल नंबर (Mobile Number) *</label>
+                <input type="tel" id="cust-phone" class="form-input" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="cust-address">डिलीवरी का पता / रूम या टेबल नंबर (Address / Table No.) *</label>
+                <input type="text" id="cust-address" class="form-input" placeholder="जैसे: रूम नं. 12, मेन मार्केट, या टेबल नं. 4">
+            </div>
+
+            <!-- Order Summary Preview -->
+            <div class="receipt-box" id="receipt-box">
+                <div class="receipt-header">
+                    <span>🧾 आपका ऑर्डर सारांश (Order Summary)</span>
+                    <button type="button" class="clear-btn" onclick="resetOrder()">साफ़ करें (Clear)</button>
+                </div>
+                <ul class="receipt-list" id="receipt-list"></ul>
+                <div class="receipt-total-row">
+                    <span>कुल बिल (Total Bill)</span>
+                    <span id="receipt-total" style="color: #ea580c;">₹0</span>
+                </div>
+            </div>
+
+            <button type="button" class="whatsapp-btn" onclick="submitWhatsAppOrder()">
+                <span>📲 WhatsApp पर ऑर्डर भेजें (Order via WhatsApp)</span>
+            </button>
+            <p style="text-align: center; font-size: 0.72rem; color: #64748b; margin-top: 8px;">
+                बटन दबाते ही आपका ऑर्डर सीधे किचन के WhatsApp (+91 91297 12552) पर खुल जाएगा।
+            </p>
+        </section>
+    </main>
+
+    <!-- ==================== STICKY BOTTOM CART BAR ==================== -->
+    <div class="sticky-bar" id="sticky-bar">
+        <div class="sticky-inner">
+            <div class="cart-badge-wrap">
+                <div class="cart-icon-box">
+                    🛍️
+                    <span class="cart-count-pill" id="sticky-count">0</span>
+                </div>
+                <div>
+                    <div id="sticky-label" style="font-size: 0.74rem; color: #cbd5e1;">0 आइटम चुने गए</div>
+                    <div style="font-size: 1.05rem; font-weight: 800;">कुल बिल: <span id="sticky-price" style="color: #fb923c;">₹0</span></div>
+                </div>
+            </div>
+            <div class="sticky-actions">
+                <a href="#checkout-section" class="btn-scroll-form">पता भरें ↓</a>
+                <button type="button" class="btn-sticky-wa" onclick="submitWhatsAppOrder()">ऑर्डर करें →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div class="toast" id="toast">
+        <span id="toast-icon">ℹ️</span>
+        <span id="toast-msg">संदेश</span>
+    </div>
+
+    <!-- ==================== QR CODE MODAL ==================== -->
+    <div class="modal-backdrop" id="qr-modal" onclick="if(event.target===this) closeQRModal()">
+        <div class="modal-card">
+            <button type="button" class="modal-close" onclick="closeQRModal()">✕</button>
+            <span class="pill-tag">स्कैन करें और ऑर्डर करें</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--maroon); margin-top: 4px;">घर का स्वाद किचन</h3>
+            <p style="font-size: 0.78rem; color: #64748b; margin-top: 4px;">
+                ग्राहक इस QR कोड को अपने फोन के कैमरे से स्कैन करके सीधा मेन्यू खोल सकते हैं।
+            </p>
+
+            <div class="qr-frame" id="qr-container">
+                <!-- QR Image / Canvas renders here -->
+            </div>
+
+            <div id="qr-link-text" style="font-size: 0.68rem; color: #64748b; background: #f8fafc; padding: 6px 8px; border-radius: 8px; word-break: break-all;"></div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" onclick="copyPageUrl()">🔗 लिंक कॉपी करें</button>
+                <button type="button" class="btn-primary-sm" onclick="window.print()">🖨️ प्रिंट निकालें</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        // =========================================================================
+        // महत्वपूर्ण सेटिंग (आपका WhatsApp नंबर: 91 + 9129712552)
+        // =========================================================================
+        const KITCHEN_WHATSAPP_NUMBER = "919129712552";
+        const KITCHEN_TITLE = "घर का स्वाद किचन (Ghar Ka Swad Kitchen)";
+
+        // सभी 10 डिश का डेटा (आपकी रेट लिस्ट के अनुसार)
+        const ITEMS = {
+            anda_bhurji: { nameHi: "अंडा भुर्जी", nameEn: "Anda Bhurji", price: 60, unit: "प्लेट" },
+            roti:        { nameHi: "रोटी", nameEn: "Roti", price: 7, unit: "पीस" },
+            chawal:      { nameHi: "चावल", nameEn: "Chawal", price: 50, unit: "प्लेट" },
+            dal:         { nameHi: "दाल", nameEn: "Dal", price: 60, unit: "प्लेट" },
+            chole:       { nameHi: "छोले", nameEn: "Chole", price: 60, unit: "प्लेट" },
+            rajma:       { nameHi: "राजमा", nameEn: "Rajma", price: 60, unit: "प्लेट" },
+            chicken:     { nameHi: "चिकन", nameEn: "Chicken", price: 90, unit: "प्लेट" },
+            ande_aloo:   { nameHi: "अण्डे आलू", nameEn: "Ande Aloo", price: 80, unit: "प्लेट" },
+            kadhi:       { nameHi: "कढ़ी", nameEn: "Kadhi", price: 60, unit: "प्लेट" },
+            mix_dal:     { nameHi: "मिक्स दाल", nameEn: "Mix Dal", price: 60, unit: "प्लेट" }
+        };
+
+        const cart = {};
+
+        // मात्रा (Quantity) बदलने का फंक्शन
+        function changeQty(id, delta) {
+            const current = cart[id] || 0;
+            const next = Math.max(0, current + delta);
+            if (next === 0) {
+                delete cart[id];
+            } else {
+                cart[id] = next;
+            }
+
+            // कार्ड UI अपडेट करें
+            const qtyEl = document.getElementById("qty-" + id);
+            const cardEl = document.getElementById("card-" + id);
+            if (qtyEl) {
+                qtyEl.textContent = next;
+                qtyEl.classList.toggle("active", next > 0);
+            }
+            if (cardEl) {
+                cardEl.classList.toggle("selected", next > 0);
+            }
+
+            updateSummary();
+        }
+
+        // कैटेगरी फ़िल्टर (All / Veg / Non-Veg)
+        function filterMenu(category, btn) {
+            document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            document.querySelectorAll(".menu-card").forEach(card => {
+                const type = card.getAttribute("data-type");
+                if (category === "all" || type === category) {
+                    card.classList.remove("hidden-item");
+                } else {
+                    card.classList.add("hidden-item");
+                }
+            });
+        }
+
+        // कस्टम नोट में क्विक टैग जोड़ना
+        function addQuickTag(text) {
+            const box = document.getElementById("custom-note");
+            const val = box.value.trim();
+            if (!val.includes(text)) {
+                box.value = val ? val + ", " + text : text;
+                updateSummary();
+                showToast('"' + text + '" जोड़ा गया', "✍️");
+            }
+        }
+
+        // कार्ट सारांश और स्टिकी बार अपडेट करना
+        function updateSummary() {
+            let totalQty = 0;
+            let totalRupees = 0;
+            const listEl = document.getElementById("receipt-list");
+            listEl.innerHTML = "";
+
+            Object.keys(ITEMS).forEach(id => {
+                const qty = cart[id] || 0;
+                if (qty > 0) {
+                    const item = ITEMS[id];
+                    const sub = qty * item.price;
+                    totalQty += qty;
+                    totalRupees += sub;
+
+                    const li = document.createElement("li");
+                    li.innerHTML = `<span><strong>${item.nameHi}</strong> (${qty} ${item.unit})</span><span><strong>₹${sub}</strong></span>`;
+                    listEl.appendChild(li);
+                }
+            });
+
+            const customText = document.getElementById("custom-note").value.trim();
+            if (customText) {
+                const li = document.createElement("li");
+                li.style.color = "#9a3412";
+                li.style.background = "#ffedd5";
+                li.style.padding = "5px 8px";
+                li.style.borderRadius = "8px";
+                li.style.marginTop = "4px";
+                li.textContent = "✍️ अन्य / कस्टम: " + customText;
+                listEl.appendChild(li);
+            }
+
+            const hasItems = totalQty > 0 || customText.length > 0;
+            document.getElementById("sticky-bar").classList.toggle("visible", hasItems);
+            document.getElementById("receipt-box").classList.toggle("visible", hasItems);
+
+            document.getElementById("sticky-count").textContent = totalQty;
+            document.getElementById("sticky-label").textContent = totalQty > 0 ? `${totalQty} आइटम चुने गए` : "कस्टम ऑर्डर लिखा गया";
+            document.getElementById("sticky-price").textContent = "₹" + totalRupees;
+            document.getElementById("receipt-total").textContent = "₹" + totalRupees;
+        }
+
+        // पूरा ऑर्डर रीसेट करना
+        function resetOrder() {
+            Object.keys(cart).forEach(id => {
+                delete cart[id];
+                const qtyEl = document.getElementById("qty-" + id);
+                const cardEl = document.getElementById("card-" + id);
+                if (qtyEl) { qtyEl.textContent = "0"; qtyEl.classList.remove("active"); }
+                if (cardEl) { cardEl.classList.remove("selected"); }
+            });
+            document.getElementById("custom-note").value = "";
+            updateSummary();
+            showToast("ऑर्डर साफ़ कर दिया गया है", "🗑️");
+        }
+
+        // WhatsApp पर ऑर्डर भेजना
+        function submitWhatsAppOrder() {
+            const customText = document.getElementById("custom-note").value.trim();
+            const hasMenuItems = Object.keys(cart).length > 0;
+
+            if (!hasMenuItems && !customText) {
+                showToast("कृपया पहले मेन्यू से खाना चुनें या 'अन्य' बॉक्स में लिखें!", "🍲");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+            }
+
+            const name = document.getElementById("cust-name").value.trim();
+            const phone = document.getElementById("cust-phone").value.trim();
+            const address = document.getElementById("cust-address").value.trim();
+
+            if (!name) {
+                showToast("कृपया अपना नाम लिखें", "👤");
+                document.getElementById("cust-name").focus();
+                return;
+            }
+            if (!phone || phone.length < 10) {
+                showToast("कृपया सही 10 अंकों का मोबाइल नंबर लिखें", "📱");
+                document.getElementById("cust-phone").focus();
+                return;
+            }
+            if (!address) {
+                showToast("कृपया डिलीवरी का पता या टेबल नंबर लिखें", "📍");
+                document.getElementById("cust-address").focus();
+                return;
+            }
+
+            let msg = `*🍲 नया फूड ऑर्डर - ${KITCHEN_TITLE}*\n`;
+            msg += `----------------------------------\n`;
+            msg += `*👤 ग्राहक का नाम:* ${name}\n`;
+            msg += `*📞 मोबाइल:* ${phone}\n`;
+            msg += `*📍 पता / टेबल:* ${address}\n`;
+            msg += `----------------------------------\n`;
+            msg += `*📋 ऑर्डर लिस्ट:*\n`;
+
+            let total = 0;
+            let count = 1;
+            Object.keys(ITEMS).forEach(id => {
+                const qty = cart[id] || 0;
+                if (qty > 0) {
+                    const item = ITEMS[id];
+                    const sub = qty * item.price;
+                    total += sub;
+                    msg += `${count}. ${item.nameHi} (${item.nameEn}) × *${qty} ${item.unit}* = ₹${sub}\n`;
+                    count++;
+                }
+            });
+
+            if (customText) {
+                msg += `\n*✍️ अन्य / अपनी पसंद का खाना (Custom Order):*\n"${customText}"\n`;
+            }
+
+            msg += `----------------------------------\n`;
+            if (total > 0) {
+                msg += `*💰 कुल अनुमानित बिल: ₹${total}*\n`;
+            }
+            if (customText) {
+                msg += `_(नोट: कस्टम आइटम का रेट किचन द्वारा कन्फर्म किया जाएगा)_\n`;
+            }
+            msg += `\nकृपया मेरा ऑर्डर कन्फर्म करें। धन्यवाद! 🙏`;
+
+            const url = `https://wa.me/${KITCHEN_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+            showToast("WhatsApp खुल रहा है...", "✅");
+            window.open(url, "_blank");
+        }
+
+        // QR कोड मॉडल खोलना (ऑनलाइन API + ऑफलाइन SVG फॉलबैक के साथ)
+        function openQRModal() {
+            const pageUrl = window.location.href;
+            document.getElementById("qr-link-text").textContent = pageUrl;
+
+            const container = document.getElementById("qr-container");
+            const encodedUrl = encodeURIComponent(pageUrl);
+            const qrApiSrc = `https://api.qrserver.com/v1/create-qr-code/?size=190x190&color=431407&data=${encodedUrl}`;
+
+            container.innerHTML = `<img src="${qrApiSrc}" alt="Scan to Order QR Code" width="190" height="190" style="display:block; border-radius:8px;" onerror="renderOfflineQRFallback(this.parentElement)">`;
+            document.getElementById("qr-modal").classList.add("open");
+        }
+
+        // ऑफलाइन / सैंडबॉक्स स्थिति के लिए SVG QR कोड फॉलबैक
+        function renderOfflineQRFallback(el) {
+            el.innerHTML = `
+                <svg width="190" height="190" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="#ffffff"/>
+                    <rect x="8" y="8" width="26" height="26" fill="none" stroke="#431407" stroke-width="5"/>
+                    <rect x="15" y="15" width="12" height="12" fill="#ea580c"/>
+                    <rect x="66" y="8" width="26" height="26" fill="none" stroke="#431407" stroke-width="5"/>
+                    <rect x="73" y="15" width="12" height="12" fill="#ea580c"/>
+                    <rect x="8" y="66" width="26" height="26" fill="none" stroke="#431407" stroke-width="5"/>
+                    <rect x="15" y="73" width="12" height="12" fill="#ea580c"/>
+                    <path d="M42 10h6v12h-6zm10 6h6v18h-6zM10 42h18v6H10zm24 0h12v12H34zm18 6h18v6H52zm24-6h14v12H76zM42 60h12v18H42zm18 6h12v24H60zm18 12h14v14H78z" fill="#431407"/>
+                </svg>
+                <div style="font-size:10px; color:#ea580c; font-weight:700; margin-top:4px;">लाइव होस्ट करने पर यह QR ऑटो-अपडेट होगा</div>
+            `;
+        }
+
+        function closeQRModal() {
+            document.getElementById("qr-modal").classList.remove("open");
+        }
+
+        function copyPageUrl() {
+            const temp = document.createElement("input");
+            temp.value = window.location.href;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+            showToast("वेबसाइट लिंक कॉपी हो गया है!", "🔗");
+        }
+
+        let toastTimer;
+        function showToast(message, icon) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toast-msg").textContent = message;
+            document.getElementById("toast-icon").textContent = icon || "ℹ️";
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
+        }
+    </script>
+</body>
+</html>
