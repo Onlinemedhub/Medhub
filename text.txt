@@ -1422,7 +1422,7 @@
             }
             msg += `\nकृपया मेरा ऑर्डर कन्फर्म करें। धन्यवाद! 🙏`;
 
-            const url = `https://wa.me/${KITCHEN_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+            const url = `https://wa.me/${+919129712552}?text=${encodeURIComponent(msg)}`;
             showToast("WhatsApp खुल रहा है...", "✅");
             window.open(url, "_blank");
         }
